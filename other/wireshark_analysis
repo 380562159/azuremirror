@@ -1,0 +1,96 @@
+client ip:
+10.11.29.131
+
+server ip:
+139.217.146.62
+
+1-7:
+DNS ip查询 mirror.azure.cn
+分别 query
+127.0.0.1
+210.22.70.3
+210.22.84.3 
+114.114.114.114
+(前3个服务器立刻返回 139.217.146.62，114服务器在第25条packet返回结果)
+
+8-10:
+client:60680 与server:80 建立连接
+
+11-24:
+client:60686 发起 GET /
+server返回对应的html页面
+
+25:
+114 DNS query response
+
+26:
+client:60686 发起 GET /style.css
+
+27:
+client:60690 发起建立连接的sync
+
+28-35:
+client:60686 与server传输 style.css
+
+36:
+client:60686 GET /icons/kaiyuanshe.png
+
+37-38:
+client:60690 与 server 完成剩下的2步连接
+
+39-94:
+client:60686 与 sever 完成 /icons/kaiyuanshe.png 传输
+
+95:
+client:60686 发起 GET /icons/file_small.png
+
+96:
+client:60690 发起 GET /icons/help.png
+
+97:
+client:60692 发起建立连接
+
+98:
+client:60694 发起建立连接
+
+99:
+client:60696 发起建立连接
+
+100-102:
+client:60686 接收 /icons/file_small.png
+
+103-107:
+client:60690 接收 /icons/help.png
+
+108:
+client:60686 发起 GET /icons/mirror-setting-tips.png
+
+109:
+client:60690 发起 GET /icons/quick-link.png
+
+110-111:
+client:60694 完成2次握手建立连接
+
+112-113:
+client:60692 完成2次握手建立连接
+
+114:
+client:60694 GET /icons/contact.png
+
+115-116:
+client:60696 完成2次握手建立连接
+
+117-119:
+client:60686 接收 /icons/mirror-setting-tips.png 
+
+120-122:
+client:60690 接收 /icons/quick-link.png
+
+123-127:
+client:60694 接收 /icons/contact.png
+
+
+
+
+
+

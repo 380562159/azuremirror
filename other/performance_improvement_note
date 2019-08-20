@@ -1,0 +1,8 @@
+slow:
+Time per request:       0.201 [ms] (mean, across all concurrent requests)
+
+fast:
+Time per request:       0.178 [ms] (mean, across all concurrent requests)
+
+快了将近 1/10。
+将渲染的内容缓存在了内存中，省去重复读文件的操作。
